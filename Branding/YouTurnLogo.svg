@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 180 180">
+  <title>YouTurn</title>
+  <rect width="180" height="180" rx="40" fill="#1E2A4A"/>
+  <path d="M58 50 V121 A32 32 0 0 0 90 153" fill="none" stroke="#7D879C" stroke-width="14"/>
+  <path d="M90 153 A32 32 0 0 0 122 121 V58" fill="none" stroke="#FFB547" stroke-width="14" stroke-linecap="round"/>
+  <polygon points="100,60 122,26 144,60" fill="#FFB547" stroke="#FFB547" stroke-width="5" stroke-linejoin="round"/>
+</svg>

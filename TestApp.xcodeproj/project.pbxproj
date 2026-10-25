@@ -6,6 +6,12 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		49806F28304E7FC500C5D501 /* FirebaseAI in Frameworks */ = {isa = PBXBuildFile; productRef = 49806F27304E7FC500C5D501 /* FirebaseAI */; };
+		49806F2A304E7FC500C5D501 /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = 49806F29304E7FC500C5D501 /* FirebaseAppCheck */; };
+		49806F2C304E7FC500C5D501 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 49806F2B304E7FC500C5D501 /* FirebaseCore */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		49843A2D300DDA5300EC558A /* TestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -23,6 +29,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49806F2A304E7FC500C5D501 /* FirebaseAppCheck in Frameworks */,
+				49806F2C304E7FC500C5D501 /* FirebaseCore in Frameworks */,
+				49806F28304E7FC500C5D501 /* FirebaseAI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +74,9 @@
 			);
 			name = TestApp;
 			packageProductDependencies = (
+				49806F27304E7FC500C5D501 /* FirebaseAI */,
+				49806F29304E7FC500C5D501 /* FirebaseAppCheck */,
+				49806F2B304E7FC500C5D501 /* FirebaseCore */,
 			);
 			productName = TestApp;
 			productReference = 49843A2D300DDA5300EC558A /* TestApp.app */;
@@ -94,6 +106,9 @@
 			);
 			mainGroup = 49843A24300DDA5300EC558A;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				49806F26304E7FC500C5D501 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 49843A2E300DDA5300EC558A /* Products */;
 			projectDirPath = "";
@@ -253,11 +268,15 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = YouTurn;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need access to your camera to capture your photo for the future wellness projection.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We need access to your photo library to select a photo for the future wellness projection.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -284,11 +303,15 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = YouTurn;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need access to your camera to capture your photo for the future wellness projection.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We need access to your photo library to select a photo for the future wellness projection.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -328,6 +351,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		49806F26304E7FC500C5D501 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.18.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		49806F27304E7FC500C5D501 /* FirebaseAI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 49806F26304E7FC500C5D501 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAI;
+		};
+		49806F29304E7FC500C5D501 /* FirebaseAppCheck */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 49806F26304E7FC500C5D501 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAppCheck;
+		};
+		49806F2B304E7FC500C5D501 /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 49806F26304E7FC500C5D501 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 49843A25300DDA5300EC558A /* Project object */;
 }

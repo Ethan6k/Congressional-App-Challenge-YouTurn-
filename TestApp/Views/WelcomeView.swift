@@ -4,61 +4,51 @@
 //
 //  Created by Ethan Hong on 7/19/26.
 //
+//  First screen on first launch: the logo, what YouTurn does, and a button
+//  into the setup slides.
+//
 
 import SwiftUI
 
 struct WelcomeView: View {
 
-    @StateObject var profile = UserProfile()
+    @EnvironmentObject var profile: UserProfile
+
+    /// Called when they finish the last setup slide.
+    let onFinishSetup: () -> Void
 
     var body: some View {
+        VStack(spacing: 24) {
+            Spacer()
 
-        NavigationStack {
+            YouTurnLogo()
+                .frame(width: 150)
+                .shadow(color: .black.opacity(0.3), radius: 20, y: 10)
 
-            VStack(spacing: 30) {
+            VStack(spacing: 12) {
+                Text("YouTurn")
+                    .font(.system(size: 44, weight: .bold, design: .rounded))
+                    .foregroundStyle(Theme.text)
 
-                Spacer()
-
-                Image(systemName: "person.crop.circle.fill")
-                    .font(.system(size: 100))
-                    .foregroundStyle(.blue)
-
-                Text("Meet Your Future Self")
-                    .font(.largeTitle)
-                    .bold()
-
-                Text("""
-                Discover how your daily habits
-                shape the person you become.
-                """)
-                .multilineTextAlignment(.center)
-                .foregroundStyle(.gray)
-
-
-                Spacer()
-
-
-                NavigationLink {
-
-                    NameView()
-                        .environmentObject(profile)
-
-                } label: {
-
-                    Text("Begin Journey")
-                        .font(.headline)
-                        .frame(maxWidth: .infinity)
-                        .padding()
-                        .background(.blue)
-                        .foregroundColor(.white)
-                        .cornerRadius(15)
-
-                }
-                .padding()
-
+                Text("See where your habits are taking you,\nand turn toward where you want to be.")
+                    .font(.body)
+                    .multilineTextAlignment(.center)
+                    .foregroundStyle(Theme.textSecondary)
             }
+            .padding(.horizontal)
 
+            Spacer()
+
+            NavigationLink {
+                OnboardingView(onFinish: onFinishSetup)
+            } label: {
+                Text(profile.name.isEmpty ? "Get started" : "Continue where you left off")
+            }
+            .buttonStyle(PrimaryButtonStyle())
+            .padding(.horizontal, 20)
+            .padding(.bottom, 12)
         }
-
+        .themedScreen()
+        .toolbar(.hidden, for: .navigationBar)
     }
 }
